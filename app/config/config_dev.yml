@@ -1,6 +1,12 @@
 imports:
     - { resource: config.yml }
 
+doctrine:
+    dbal:
+        dbname: "%database_name_dev%"
+        user: "%database_user_dev%"
+        password: "%database_password_dev%"     
+
 framework:
     router:
         resource: '%kernel.project_dir%/app/config/routing_dev.yml'
