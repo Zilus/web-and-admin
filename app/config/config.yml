@@ -13,6 +13,8 @@ parameters:
 framework:
     #esi: ~
     translator: { fallbacks: ['%locale%'] }
+    templating:
+        engines: ['twig']
     secret: '%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
@@ -73,3 +75,11 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+    from_email:
+        address: "%mailer_user%"
+        sender_name: "%mailer_user%"   
