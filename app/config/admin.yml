@@ -1,0 +1,31 @@
+easy_admin:
+    site_name: 'Mi proyecto'
+    formats:
+        date:     'd/m/Y'
+        time:     'H:i'
+        datetime: 'd/m/Y H:i:s'
+    entities:
+        User:
+            label: Usuarios
+            class: AppBundle\Entity\User
+            list:
+                title: Usuarios
+                fields:
+                    - { property: 'userName', label: 'Usuario' }
+                    - { property: 'Email', label: 'Email' }
+                    - { property: 'Enabled', label: 'Activo', type: 'toggle' }
+                actions:
+                    - { name: 'edit', icon: 'pencil', label: false }
+                    - { name: 'delete', icon: 'remove', label: false }
+                    - { name: 'new', label: Nuevo usuario }
+            form:
+                fields:
+                    - { property: 'username', css_class: 'input-large', label: 'Nombre' }
+                    - { property: 'email', css_class: 'input-large', label: 'Email' }
+                    - { property: 'plainPassword', label: 'Contraseña', type: 'password', type_options: { required: true } }
+            new:
+                title:  'Nuevo Usuario'
+            edit:
+                title:  'Editar Usuario'
+                fields:
+                    - { property: 'plainPassword', label: 'Contraseña', type: 'password', type_options: { required: false } }

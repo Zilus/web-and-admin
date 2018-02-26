@@ -1,4 +1,4 @@
 parameters:
-    database_name_dev: intranet
+    database_name_dev: web-and-admin
     database_user_dev: symfony
     database_password_dev: 123
