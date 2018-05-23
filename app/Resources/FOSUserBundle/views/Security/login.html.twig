@@ -2,17 +2,28 @@
 
 {% block fos_user_content %}
     {% trans_default_domain 'FOSUserBundle' %}
-    <div class="form">
-        <form class="login-form" action="{{ path("fos_user_security_check") }}" method="post">
-            {% if csrf_token %}
-                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-            {% endif %}
-            <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
-            <input type="password" id="password" name="_password" required="required" autocomplete="current-password" />
-            <button type="submit" id="_submit" name="_submit">Entrar</button>
-        </form>
-        {% if error %}
-            <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-        {% endif %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4">
+                <form class="login-form" action="{{ path("fos_user_security_check") }}" method="post">
+                {% if csrf_token %}
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                {% endif %}
+                <div class="form-login">
+                    <h4>Administración</h4>
+                    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" class="form-control input-sm chat-input" placeholder="usuario" />
+                    </br>
+                    <input type="password" id="password" name="_password" required="required" autocomplete="current-password" class="form-control input-sm chat-input" placeholder="password" />
+                    </br>
+                    <div class="wrapper">
+                        <button type="submit" id="_submit" name="_submit" class="btn btn-primary btn-md btn-block">Entrar <i class="fa fa-sign-in"></i></button>
+                        {% if error %}
+                            <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
     </div>
 {% endblock fos_user_content %}            
