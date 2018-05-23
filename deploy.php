@@ -27,17 +27,17 @@ add('writable_dirs', []);
 inventory('hosts.yml');
 
 // Tasks
-task('deploy:shared', function() {
+task('upload:shared', function() {
     $files = get('shared_files');
 
     foreach ($files as $file)
     {
-        upload($file, "{{deploy_path}}/release/".$file);
+        upload($file, "{{deploy_path}}/shared/".$file);
     }
 });
 
 // [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
 
-after('deploy:update_code', 'deploy:shared');
+before('deploy:symlink', 'database:migrate');
 
