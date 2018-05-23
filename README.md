@@ -17,3 +17,10 @@ What's inside?
   * Symfony 3.4.
 
 Clone the project, edit parameters and parameters-dev (for local devel) and run composer install.
+
+Default admin:
+
+/admin
+
+User: admin
+Passwd: 123qwe
