@@ -29,3 +29,6 @@ easy_admin:
                 title:  'Editar Usuario'
                 fields:
                     - { property: 'plainPassword', label: 'Contraseña', type: 'password', type_options: { required: false } }
+        Post:
+            label: Posts
+            class: AppBundle\Entity\Post
