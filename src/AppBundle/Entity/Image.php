@@ -34,6 +34,11 @@ class Image
      */
     private $post;
 
+    public function __toString()
+    {
+        return $this->file;
+    }
+
 
     /**
      * Get id
@@ -68,5 +73,28 @@ class Image
     {
         return $this->file;
     }
-}
 
+    /**
+     * Set post
+     *
+     * @param \AppBundle\Entity\Post $post
+     *
+     * @return Image
+     */
+    public function setPost(\AppBundle\Entity\Post $post = null)
+    {
+        $this->post = $post;
+
+        return $this;
+    }
+
+    /**
+     * Get post
+     *
+     * @return \AppBundle\Entity\Post
+     */
+    public function getPost()
+    {
+        return $this->post;
+    }
+}
