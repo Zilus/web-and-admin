@@ -35,4 +35,10 @@ easy_admin:
         
         Image:
             label: Image
-            class: AppBundle\Entity\Image    
+            class: AppBundle\Entity\Image
+            list:
+                fields:
+                    - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+            form:
+                fields:
+                    - { property: 'imageFile', type: 'vich_image' }
